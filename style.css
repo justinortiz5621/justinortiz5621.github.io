@@ -1,0 +1,208 @@
+@font-face {
+  font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif';
+  src: url('gascogneregular.woff')
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5em;
+  font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif';
+  font-size: 14px;
+
+  
+}
+
+a {
+  color: black;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#initial { 
+  height: 100px;
+  margin-bottom: 1em;
+}
+
+#email {
+  position: absolute;
+  top:0;
+  right:0;
+  margin:1rem;
+  font-size:0.75em;
+}
+
+#artworks > .artwork {
+  margin-bottom: .5em;
+}
+
+
+.artwork .title {
+  cursor: pointer;
+}
+
+.artwork .body-container {
+  height: 0px;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.5s ease-out, margin 0.5s ease-out;
+}
+
+.artwork .body-container.visible {
+  height: 600px;
+  margin: 1em 0 2em 0;
+}
+
+.artwork .body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.artwork .body > div {
+  height: 50%;
+  flex: 1;
+}
+
+.artwork .body > div:last-child {
+  margin-right: 0;
+}
+
+.artwork .body .description {
+  position: relative;
+  max-height: 200px;
+  max-width: 100%;
+  margin-bottom: 2em;
+  overflow: auto;
+}
+
+
+.artwork .body .description span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-right: 1em;
+  margin-bottom: -5em;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5em;
+}
+
+.artwork .body .description::after {
+  content: "";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 5em;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%)
+}
+
+.artwork .body .description p {
+  font-size: .75em;
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+
+.image-gallery {
+  position: relative;
+}
+
+.image-gallery ul,
+.image-gallery li,
+.image-gallery figure {
+  width: 100%;
+  height: 100%;
+}
+
+.image-gallery li {
+  position: absolute;
+  display: none;
+}
+
+.image-gallery li.active {
+  display: block;
+}
+
+.image-gallery figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-gallery figure img {
+  min-height: 0;
+  flex: 1;
+  object-fit: contain;
+}
+
+.image-gallery figcaption { 
+  width: 100%;
+  margin-top: 1em;
+  flex: 0;
+  text-align: center;
+  font-size: .75em;
+  line-height: 1.6em;
+
+}
+
+.image-gallery button {
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+  padding: 0 2rem;
+  font-size: 3em;
+  color: grey;
+}
+
+.image-gallery .next-button {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.image-gallery .prev-button {
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+@media (min-width: 768px) {
+
+  .artwork .body .description {
+    max-height: 600px;
+    margin-bottom: 0;
+    max-width: 400px;
+    padding-right: 1em;
+  }
+
+  .artwork .body > div {
+    height: 600px;
+    margin-right: 2em;
+  }
+
+  .artwork .body {
+    flex-direction: row;
+  }
+
+  .artwork .body .description::after {
+    display: none;
+  }
+  
+}
