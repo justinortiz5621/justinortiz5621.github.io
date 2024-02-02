@@ -205,4 +205,14 @@ ul {
     display: none;
   }
   
+}.span info {
+  display: block;
+  width: 500%;
+  height: 100%;
+  padding-right: 1em;
+  margin-bottom: -5em;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5em;
 }
