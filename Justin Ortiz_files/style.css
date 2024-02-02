@@ -60,25 +60,9 @@ ul {
   transition: height 0.5s ease-out, margin 0.5s ease-out;
 }
 
-.artwork .body-container2 {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-right: 1em;
-  margin-bottom: -5em;
-  overflow-y: scroll;
-  scroll-behavior: auto;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 5em;
-}
 
 .artwork .body-container.visible {
   height: 600px;
-  margin: 1em 0 2em 0;
-}
-
-.artwork .body-container.visible2 {
-  height: 1200px;
   margin: 1em 0 2em 0;
 }
 
@@ -106,17 +90,14 @@ ul {
   overflow: auto;
 }
 
-.artwork .body .info {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-right: 1em;
-  margin-bottom: -5em;
-  overflow-y: scroll;
-  scroll-behavior: auto;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 5em;
+.artwork .body .descriptiona {
+  position: relative;
+  max-height: 600px;
+  max-width: 1200%;
+  margin-bottom: 2em;
+  overflow: auto;
 }
+
 .artwork .body .description span {
   display: block;
   width: 100%;
@@ -210,5 +191,36 @@ ul {
   left:0;
 }
 
-.span {
+@media (min-width: 768px) {
+
+  .artwork .body .description {
+    max-height: 600px;
+    margin-bottom: 0;
+    max-width: 400px;
+    padding-right: 1em;
+  }
+
+  .artwork .body > div {
+    height: 600px;
+    margin-right: 2em;
+  }
+
+  .artwork .body {
+    flex-direction: row;
+  }
+
+  .artwork .body .description::after {
+    display: none;
+  }
+  
+}.span info {
+  display: block;
+  width: 500%;
+  height: 100%;
+  padding-right: 1em;
+  margin-bottom: -5em;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5em;
 }
